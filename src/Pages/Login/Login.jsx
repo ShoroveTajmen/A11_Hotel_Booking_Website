@@ -3,6 +3,7 @@ import SocialLogin from "./SocialLogin";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -38,6 +39,12 @@ const Login = () => {
     signIn(email, password)
       .then((res) => {
         console.log(res.user);
+        const user = {email};
+        //get acces token
+        axios.post('http://localhost:5001/jwt', user, {withCredentials: true})
+        .then(res => {
+          console.log(res.data)
+        })
         setSuccess(Swal.fire("Login Successful", "success"));
         navigate("/");
       })

@@ -1,7 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import Logo from "./Logo";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+
+
+
   return (
     <div>
       <nav className="flex flex-col md:flex-row md:justify-between md:items-center py-3 md:py-2  md:px-5 md:ml-0 bg-[#FFF8DC]">
@@ -66,12 +73,42 @@ const Navbar = () => {
           </div>
 
           {/* Login, logout, profile pic and username  */}
-          <div>
-            <Link to="/login">
-              <button className=" btn-sm bg-[#c97d4a] text-white uppercase font-bold lg:ml-[5px] md:ml-0 ml-[190px]">
-                Login
-              </button>
-            </Link>
+          <div className="">
+            {user?.email ? (
+              <div className="flex gap-4 justify-center items-center w-[300px] ml-[80px] md:ml-0">
+                <div className=" rounded-full">
+                  <img
+                    className="rounded-full w-[90px] h-[50px]"
+                    src={user.photoURL}
+                    alt={user.displayName}
+                  />
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-sm dropdown-content mt-3 w-[400px] z-[1] p-2 shadow bg-base-100 rounded-box "
+                >
+                  <li>
+                    <button className="btn btn-sm  btn-ghost">
+                      {user.displayName}
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="btn btn-sm bg-[#c97d4a] text-white font-bold"
+                      onClick={logOut}
+                    >
+                      Logout
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            ) : (
+              <Link to="/login">
+                <button className=" btn-sm bg-[#c97d4a] text-white uppercase font-bold lg:ml-[5px] md:ml-0 ml-[190px]">
+                  Login
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </nav>
