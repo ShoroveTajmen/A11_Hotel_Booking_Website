@@ -1,8 +1,61 @@
 /* eslint-disable no-undef */
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../Login/SocialLogin";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
+
+    const {createUser, handleUpdateProfile} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const [regError, setRegError] = useState('');
+    // eslint-disable-next-line no-unused-vars
+    const [success, setSuccess] = useState('');
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        //get input field values
+        const name = e.target.name.value;
+        const photo = e.target.photo.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email, name, password, photo);
+    
+        //reset error
+        setRegError("");
+        setSuccess("");
+    
+        //password validation
+        if (password.length < 6) {
+          setRegError("Password should be at least 6 characters.");
+          return;
+        } else if (!/[A-Z]/.test(password)) {
+          setRegError("Password should have at least one upper case character.");
+          return;
+        } else if (!/[!@#$%^&*()_+{}\\[\]:;<>,.?~\\|]/.test(password)) {
+          setRegError("Password should have one special character.");
+          return;
+        }
+    
+        //create a new user
+        createUser(email, password)
+          .then((res) => {
+            console.log(res);
+            handleUpdateProfile(name, photo).then(() => {
+              Swal.fire("Registration Successful", "success")
+              navigate("/");
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+            Swal.fire(error.message)
+          });
+      };
+
+
+
   return (
     <div>
       <div>
@@ -10,7 +63,7 @@ const Register = () => {
           Please Register
         </h2>
         <div className="md:w-[500px] w-[400px] mx-auto h-[570px] border border-black mb-9 p-8">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
@@ -59,7 +112,7 @@ const Register = () => {
                 required
               />
             </div>
-            {/* {regError && <p className="text-red-700">{regError}</p>} */}
+            {regError && <p className="text-red-700">{regError}</p>}
             <div className="form-control mt-6">
               <button className="bg-black p-3 uppercase text-xl text-white  font-bold">
                 Register
