@@ -6,6 +6,7 @@ import Rooms from "../Pages/Rooms/Rooms";
 import MyBookings from "../Pages/MyBookings/MyBookings";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
+import RoomsData from "../Pages/Rooms/RoomsData";
 
 const myCreateRoute = createBrowserRouter([
   {
@@ -24,6 +25,11 @@ const myCreateRoute = createBrowserRouter([
       {
         path: "/myBookins",
         element: <MyBookings></MyBookings>,
+      },
+      {
+        path: '/roomDetails/:_id', //_id spelling same as link _id
+        element: <RoomsData></RoomsData>,
+        loader: () => fetch('http://localhost:5001/roomData'),
       },
       {
         path: "/register",

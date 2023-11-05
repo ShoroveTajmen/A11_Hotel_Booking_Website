@@ -2,10 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import AllRoomsData from "./AllRoomsData";
 
+
 const Rooms = () => {
   const [allRooms, setAllRooms] = useState([]);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(50000);
+
 
   const url = "http://localhost:5001/roomData";
 
@@ -27,7 +29,7 @@ const Rooms = () => {
 
   return (
     <div>
-      <h2>all available rooms here: {filteredRooms.length}</h2>
+      <h2>All available rooms here: {filteredRooms.length}</h2>
       <div>
         <label htmlFor="minPrice">Minimum Price: </label>
         <input
