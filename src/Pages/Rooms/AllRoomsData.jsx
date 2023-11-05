@@ -1,7 +1,13 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+
+import { useState } from "react";
 
 const AllRoomsData = ({roomData}) => {
-    console.log(roomData);
+    // console.log(roomData);
     const {_id, availability, relatedRoomPic1, relatedRoomPic2, relatedRoomPic3, roomDescription, roomPic, roomPrice, roomSize, specialOffers} = roomData;
+
+    
     return (
         <div>
            <div className="h-[400px] w-[450px] border mx-auto">
