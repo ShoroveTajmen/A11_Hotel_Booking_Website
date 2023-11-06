@@ -1,6 +1,9 @@
 // import axios from "axios";
 // import { useEffect, useState } from "react";
 
+import Banner from "./Banner";
+import OfferSection from "./OfferSection";
+
 const Home = () => {
 
     // const [hotelInfo, setHotelInfo] = useState([]);
@@ -15,8 +18,9 @@ const Home = () => {
 
     return (
         <div>
-            {/* <h2>this is home page: {hotelInfo.length}</h2> */}
-            <h2>This is home page</h2>
+            <Banner></Banner>
+            <OfferSection></OfferSection>
+
         </div>
     );
 };

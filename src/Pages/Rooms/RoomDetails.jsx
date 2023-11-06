@@ -19,8 +19,27 @@ const RoomDetails = ({ Rooms }) => {
     specialOffers,
   } = Rooms;
 
-
+  //for date picker
   const [selectedDate, setSelectedDate] = useState(null);
+  //state for check booked dates
+  const [bookedDates, setBookedDates] = useState([]);
+  //for booking summary
+  const [bookingStatus, setBookingStatus] = useState('');
+  //track avaialbel seats
+  const [availableSeats, setAvailableSeats] = useState(availability);
+
+
+  const handleBookNow = () => {
+    if(!selectedDate) {
+        setSelectedDate('please select a date for booking');
+        return;
+    }
+    if(availableSeats <= 0){
+        setBookingStatus('this room is fully booked for all available dates.')
+    }
+  }
+
+
 
   return (
     <div>
@@ -35,12 +54,13 @@ const RoomDetails = ({ Rooms }) => {
             <img className="w-[150px] h-[150px]" src={relatedRoomPic3} alt="" />
           </div>
         </div>
-        <div>
+        <div className='p-6'>
             <h2 className="text-4xl font-bold mb-8">BOOKING</h2>
             <h2>Room Price: {roomPrice}</h2>
             <h2>Available Seats: {availability}</h2>
-            <label htmlFor="">Check In Date : </label>
-            <DatePicker className='border border-black' selected={selectedDate} onChange={date => setSelectedDate(date)} dateFormat='dd/MM/yyyy'></DatePicker>
+            <label htmlFor="">Select a booking Date : </label>
+            <DatePicker className='border border-black' selected={selectedDate} onChange={date => setSelectedDate(date)} dateFormat='dd/MM/yyyy'></DatePicker> <br />
+            <button onClick={handleBookNow} className='btn btn-primary mt-3'>Book Now</button>
             
         </div>
       </div>
