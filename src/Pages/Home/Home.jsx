@@ -2,6 +2,7 @@
 // import { useEffect, useState } from "react";
 
 import Banner from "./Banner";
+import Map from "./Map";
 import OfferSection from "./OfferSection";
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <OfferSection></OfferSection>
+            <Map></Map>
 
         </div>
     );
