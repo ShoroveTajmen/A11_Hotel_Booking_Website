@@ -17,6 +17,7 @@ const myCreateRoute = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("/rooms.json"),
       },
       {
         path: "/rooms",
