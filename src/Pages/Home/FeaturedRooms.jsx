@@ -2,7 +2,7 @@
 import FeaturedRoomsDetail from "./FeaturedRoomsDetail";
 
 const FeaturedRooms = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   return (
     <div>
       <h2 className="text-5xl font-bold text-center">FEATURED ROOMS</h2>

@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-import { useState } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css'; 
 
-const RoomDetails = ({ Rooms }) => {
-  console.log(Rooms);
+
+import { useEffect, useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import Swal from "sweetalert2";
+
+const RoomDetails = ({Rooms}) => {
+  // console.log(Rooms);
   const {
     _id,
     availability,
@@ -18,33 +20,57 @@ const RoomDetails = ({ Rooms }) => {
     roomSize,
     specialOffers,
   } = Rooms;
+  console.log(availability);
 
   //for date picker
   const [selectedDate, setSelectedDate] = useState(null);
-  //state for check booked dates
-  const [bookedDates, setBookedDates] = useState([]);
-  //for booking summary
-  const [bookingStatus, setBookingStatus] = useState('');
-  //track avaialbel seats
-  const [availableSeats, setAvailableSeats] = useState(availability);
+  //for track available seats
+  const [avaiableSeats, setAvailableSeats] = useState(availability);
 
-
-  const handleBookNow = () => {
-    if(!selectedDate) {
-        setSelectedDate('please select a date for booking');
-        return;
+  const handleRoomBook = (_id) => {
+    console.log("clickedd");
+    if (availability <= 0) {
+      console.log("This is booked for all available dates.");
+      return;
+    } else {
+      //send avaiable seats data to the server
+      fetch(`http://localhost:5001/roomData/${_id}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({}),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.modifiedCount > 0) {
+            Swal.fire("available seat data update successfully", "success");
+          }
+        });
     }
-    if(availableSeats <= 0){
-        setBookingStatus('this room is fully booked for all available dates.')
-    }
-  }
 
-
+    // //send avaiable seats data to the server
+    // fetch(`http://localhost:5001/roomData/${_id}`, {
+    //   method: "PUT",
+    //   headers: {
+    //     "content-type": "application/json",
+    //   },
+    //   body: JSON.stringify({}),
+    // })
+    // .then(res => res.json())
+    // .then(data => {
+    //   console.log(data);
+    //   if(data. modifiedCount > 0){
+    //     Swal.fire('available seat data update successfully', "success");
+    //   }
+    // })
+  };
 
   return (
     <div>
-      <div className="w-[1500px] h-[600px] border border-red-600 mt-10 flex">
-        <div className="w-[800px] border border-blue-700">
+      <div className="w-[1500px] h-[600px]  mt-10 flex">
+        <div className="w-[800px]">
           <div>
             <img className="w-[600px] h-[350px]" src={roomPic} alt="" />
           </div>
@@ -54,14 +80,25 @@ const RoomDetails = ({ Rooms }) => {
             <img className="w-[150px] h-[150px]" src={relatedRoomPic3} alt="" />
           </div>
         </div>
-        <div className='p-6'>
-            <h2 className="text-4xl font-bold mb-8">BOOKING</h2>
-            <h2>Room Price: {roomPrice}</h2>
-            <h2>Available Seats: {availability}</h2>
-            <label htmlFor="">Select a booking Date : </label>
-            <DatePicker className='border border-black' selected={selectedDate} onChange={date => setSelectedDate(date)} dateFormat='dd/MM/yyyy'></DatePicker> <br />
-            <button onClick={handleBookNow} className='btn btn-primary mt-3'>Book Now</button>
-            
+        <div className="p-6">
+          <h2 className="text-4xl font-bold mb-8">BOOKING</h2>
+          <h2>Room Price: {roomPrice}</h2>
+          <h2>Available Seats: {availability}</h2>
+          <label htmlFor="">Select a booking Date : </label>
+          <DatePicker
+            className="border border-black"
+            selected={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+            dateFormat="dd/MM/yyyy"
+          ></DatePicker>{" "}
+          <br />
+          <button
+            onClick={() => handleRoomBook(_id)}
+            disabled={availability <= 0}
+            className="btn btn-primary mt-3"
+          >
+            Book AVAILABLE
+          </button>
         </div>
       </div>
       <div className="w-[600px] h-[600px] border border-red-600 mt-8">
