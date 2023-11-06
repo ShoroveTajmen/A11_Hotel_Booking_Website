@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
-
-
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider";
+import moment from "moment/moment";
 
-const RoomDetails = ({Rooms}) => {
+const RoomDetails = ({ Rooms }) => {
   // console.log(Rooms);
   const {
     _id,
@@ -22,13 +22,16 @@ const RoomDetails = ({Rooms}) => {
   } = Rooms;
   console.log(availability);
 
+  const { user } = useContext(AuthContext);
+  const userEmail = user.email;
+  console.log(userEmail);
+
   //for date picker
   const [selectedDate, setSelectedDate] = useState(null);
-  //for track available seats
-  const [avaiableSeats, setAvailableSeats] = useState(availability);
+  const formattedDate = moment(selectedDate).format("DD/MM/YYYY");
 
   const handleRoomBook = (_id) => {
-    console.log("clickedd");
+    //seat availability related functionality
     if (availability <= 0) {
       console.log("This is booked for all available dates.");
       return;
@@ -50,21 +53,32 @@ const RoomDetails = ({Rooms}) => {
         });
     }
 
-    // //send avaiable seats data to the server
-    // fetch(`http://localhost:5001/roomData/${_id}`, {
-    //   method: "PUT",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify({}),
-    // })
-    // .then(res => res.json())
-    // .then(data => {
-    //   console.log(data);
-    //   if(data. modifiedCount > 0){
-    //     Swal.fire('available seat data update successfully', "success");
-    //   }
-    // })
+    //send booking related room data object to the server
+
+    // console.log(formattedDate)
+    const bookingsData = {
+      roomPrice,
+      roomDescription,
+      selectedDate: formattedDate,
+    };
+    console.log(bookingsData);
+
+    //now send data to the server
+    fetch("http://localhost:5001/roomBooks", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(bookingsData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          console.log("room booking data added");
+          Swal.fire("Room Booking data added ", "success");
+        }
+      });
   };
 
   return (
@@ -92,13 +106,39 @@ const RoomDetails = ({Rooms}) => {
             dateFormat="dd/MM/yyyy"
           ></DatePicker>{" "}
           <br />
-          <button
+          {/* <button
             onClick={() => handleRoomBook(_id)}
             disabled={availability <= 0}
             className="btn btn-primary mt-3"
           >
             Book AVAILABLE
+          </button> */}
+          {/* Open the modal using document.getElementById('ID').showModal() method */}
+          <button
+            className="btn btn-primary mt-3"
+            disabled={availability <= 0}
+            onClick={() => {
+              document.getElementById("my_modal_1").showModal();
+              handleRoomBook(_id);
+            }}
+          >
+            BOOKING AVAILABLE
           </button>
+          <dialog id="my_modal_1" className="modal">
+            <div className="modal-box text-center">
+              <h3 className="font-bold text-lg">Room Price: {roomPrice}</h3>
+              <h3 className="font-bold text-lg">Booking Date: {formattedDate}</h3>
+              <p className="py-2 font-bold text-lg">
+                {roomDescription}
+              </p>
+              <div className="modal-action">
+                <form method="dialog">
+                  {/* if there is a button in form, it will close the modal */}
+                  <button className="btn btn-primary mr-[150px]">Confirm Booking</button>
+                </form>
+              </div>
+            </div>
+          </dialog>
         </div>
       </div>
       <div className="w-[600px] h-[600px] border border-red-600 mt-8">
