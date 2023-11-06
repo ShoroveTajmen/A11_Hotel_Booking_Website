@@ -5,9 +5,11 @@ import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 import moment from "moment/moment";
+import { useLoaderData } from "react-router-dom";
 
-const RoomDetails = ({ Rooms }) => {
-  // console.log(Rooms);
+const RoomDetails = () => {
+  const roomData = useLoaderData();
+  // console.log(roomData)
   const {
     _id,
     availability,
@@ -19,19 +21,22 @@ const RoomDetails = ({ Rooms }) => {
     roomPrice,
     roomSize,
     specialOffers,
-  } = Rooms;
+  } = roomData;
+
+
+
   console.log(availability);
 
   const { user } = useContext(AuthContext);
   const userEmail = user.email;
-  console.log(userEmail);
+  // console.log(userEmail);
 
   //for date picker
   const [selectedDate, setSelectedDate] = useState(null);
   const formattedDate = moment(selectedDate).format("DD/MM/YYYY");
 
   const handleRoomBook = (_id) => {
-    //seat availability related functionality
+    //   //seat availability related functionality
     if (availability <= 0) {
       console.log("This is booked for all available dates.");
       return;
@@ -53,17 +58,18 @@ const RoomDetails = ({ Rooms }) => {
         });
     }
 
-    //send booking related room data object to the server
-
-    // console.log(formattedDate)
+    //   //send booking related room data object to the server
+    //   // console.log(formattedDate)
     const bookingsData = {
       roomPrice,
       roomDescription,
+      userEmail,
+      roomPic,
       selectedDate: formattedDate,
     };
     console.log(bookingsData);
 
-    //now send data to the server
+    //   //now send data to the server
     fetch("http://localhost:5001/roomBooks", {
       method: "POST",
       headers: {
@@ -127,14 +133,16 @@ const RoomDetails = ({ Rooms }) => {
           <dialog id="my_modal_1" className="modal">
             <div className="modal-box text-center">
               <h3 className="font-bold text-lg">Room Price: {roomPrice}</h3>
-              <h3 className="font-bold text-lg">Booking Date: {formattedDate}</h3>
-              <p className="py-2 font-bold text-lg">
-                {roomDescription}
-              </p>
+              <h3 className="font-bold text-lg">
+                Booking Date: {formattedDate}
+              </h3>
+              <p className="py-2 font-bold text-lg">{roomDescription}</p>
               <div className="modal-action">
                 <form method="dialog">
                   {/* if there is a button in form, it will close the modal */}
-                  <button className="btn btn-primary mr-[150px]">Confirm Booking</button>
+                  <button className="btn btn-primary mr-[150px]">
+                    Confirm Booking
+                  </button>
                 </form>
               </div>
             </div>
