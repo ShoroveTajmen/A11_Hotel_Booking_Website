@@ -11,11 +11,11 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="flex flex-col md:flex-row md:justify-between md:items-center py-3 md:py-2  md:px-5 md:ml-0 bg-[#FFF8DC]">
+      <nav className="flex flex-col md:flex-row md:justify-between md:items-center py-3 md:py-2  md:px-5 md:ml-0 bg-black">
         <Logo></Logo>
         {/* navbar link page */}
         <div className="lg:w-1/3 lg:ml-[300px] ml-[70px]">
-          <ul className="flex gap-5 font-bold text-sm flex-row md:flex-row md:justify-center md:items-center">
+          <ul className="flex gap-5 font-bold text-sm flex-row md:flex-row md:justify-center md:items-center text-white">
             <li>
               <NavLink
                 to="/"

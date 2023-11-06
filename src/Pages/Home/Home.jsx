@@ -6,6 +6,7 @@ import Banner from "./Banner";
 import FeaturedRooms from "./FeaturedRooms";
 import Map from "./Map";
 import OfferSection from "./OfferSection";
+import NewsLetter from "./NewsLetter";
 
 const Home = () => {
     const data = useLoaderData();
@@ -25,7 +26,7 @@ const Home = () => {
             <FeaturedRooms data={data}></FeaturedRooms>
             <OfferSection></OfferSection>
             <Map></Map>
-
+            <NewsLetter></NewsLetter>
         </div>
     );
 };
