@@ -12,15 +12,15 @@ const Banner = () => {
           className="relative ml-[19px] md:ml-[100px] lg:ml-[40px]"
           data-aos="zoom-in"
         >
-          <div className="absolute mt-[180px] md:mt-[140px]  lg:mt-[250px] w-[650px] mx-auto ml-[440px] text-center ">
-            <h1 className=" text-white text-5xl md:text-5xl lg:text-4xl font-xl mb-[10px] md:mb-[20px]">
+          <div className="absolute mt-[180px] md:mt-[140px]  lg:mt-[200px] w-[650px] mx-auto ml-[440px] text-center ">
+            <h1 className=" text-white text-5xl md:text-5xl lg:text-4xl font-xl mb-[10px] md:mb-[20px] lg:mb-[30px]">
             Luxury, redefined extraordinary !
             </h1>
             <img className="w-[500px] h-[30px] ml-[80px]" src="https://i.ibb.co/9gzjfpy/line2.jpg" alt="" />
-            <p className="text-sm md:text-xl lg:text-sm font-semibold mb-[10px] md:mb-[20px] mt-[10px] text-[#FAF0E6]">
+            <p className="text-sm md:text-xl lg:text-sm font-semibold mb-[10px] md:mb-[20px] md:mt-[10px] lg:mt-[30px] text-[#FAF0E6]">
             Indulge in the epitome of sophistication and comfort at our luxury hotel, where every detail is meticulously crafted to ensure an unforgettable and opulent experience.
             </p>
-            <button className="btn bg-[#FAF0E6]">BOOK ROOM</button>
+            <button className="btn bg-[#c97d4a] border-none w-[200px] text-white font-bold text-lg">BOOK ROOM</button>
           </div>
         </div>
       </div>

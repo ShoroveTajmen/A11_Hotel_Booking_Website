@@ -21,16 +21,17 @@ const AllRoomsData = ({ roomData }) => {
 
   return (
     <div>
-      <div className="h-[400px] w-[450px] border mx-auto">
-        <div className="relative">
+      <div className="h-[400px] w-[350px] border border-[#c97d4a] mx-auto">
+        <div className="">
           <Link to={`/roomDetails/${_id}`}>
-            <img className="h-[350px] w-[]" src={roomPic} alt="" />
+            <img className="h-[300px] w-[]" src={roomPic} alt="" />
           </Link>
         </div>
-        <h2 className="absolute bottom-[600px] bg-white ml-7">
-          {roomPrice} TK PerNight
-        </h2>
-        <h2>{roomDescription}</h2>
+        <div className="text-center mt-[20px]">
+          {" "}
+          <h2 className="font-bold text-[#c97d4a] text-xl">{roomPrice} TK PerNight</h2>
+          <h2 className="text-sm text-gray-600">{roomDescription}</h2>
+        </div>
       </div>
     </div>
   );

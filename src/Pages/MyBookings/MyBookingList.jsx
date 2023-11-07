@@ -118,36 +118,35 @@ const MyBookingList = ({ room, findUserRoom, setFindUserRoom }) => {
   return (
     <div>
       <div>
-        <div className="w-[350px] h-[700px] border border-black lg:ml-0 ml-[40px]">
+        <div className="w-[350px] h-[600px] border border-black lg:ml-0 ml-[40px]">
           <figure>
             <img
-              className="w-[200px] h-[200px] ml-[50px] mt-[20px]"
+              className="w-[250px] h-[200px] ml-[50px] mt-[20px]"
               src={roomPic}
               alt="Shoes"
             />
           </figure>
-          <div className="mt-8 ml-[50px] space-y-5">
+          <div className="mt-4 ml-[50px] ">
             <div className="space-y-3 font-bold">
               <h2 className="">Room Price: {roomPrice}</h2>
               <h2>Booking Date: {selectedDate}</h2>
-              <p>{roomDescription}</p>
             </div>
-            <div className="flex text-sm gap-2">
+            <div className="flex text-sm gap-2 mb-4">
               <button
                 onClick={() => handleDelete(_id)}
-                className="bg-black text-white p-3  font-bold  mt-[50px]"
+                className="bg-[#c97d4a] text-white p-3  font-bold  mt-[50px]"
               >
                 Delete Booking
               </button>
               <Link to={`/updateDate/${_id}`}>
-                <button className="bg-black text-white p-3  font-bold  mt-[50px]">
+                <button className="bg-[#c97d4a] text-white p-3  font-bold  mt-[50px]">
                   Update Date
                 </button>
               </Link>
             </div>
-            <div className="w-[200px]">
-              <h2>Added Room Review:</h2>
-              <div className="bg-[#DCDCDC] ">
+            <div className="w-[235px]">
+              <h2 className="font-bold text-black">Added Room Review:</h2>
+              <div className="mt-2">
                 <form onSubmit={handleRoomReview} className="space-y-1 p-2">
                   {/*  rating row */}
                   <div className="form-control">
@@ -168,7 +167,7 @@ const MyBookingList = ({ room, findUserRoom, setFindUserRoom }) => {
                     />
                   </div>
                   {/* timestamp */}
-                  <div className="form-control">
+                  <div className="form-control ">
                     <input
                       type="date"
                       name="date"
@@ -179,7 +178,7 @@ const MyBookingList = ({ room, findUserRoom, setFindUserRoom }) => {
                   <input
                     type="submit"
                     value="Submit Review"
-                    className=" btn btn-xs bg-black text-white"
+                    className=" btn btn-xs bg-[#c97d4a] text-white "
                   />
                 </form>
               </div>

@@ -75,7 +75,7 @@ const Navbar = () => {
           {/* Login, logout, profile pic and username  */}
           <div className="">
             {user?.email ? (
-              <div className="flex gap-4 justify-center items-center w-[300px] ml-[80px] md:ml-0">
+              <div className="flex gap-4 justify-center items-center w-[300px] ml-[80px] md:ml-0 text-[#c97d4a]">
                 <div className=" rounded-full">
                   <img
                     className="rounded-full w-[90px] h-[50px]"

@@ -24,7 +24,7 @@ const OfferSection = () => {
             <h1 className=" text-white text-5xl md:text-5xl lg:text-6xl font-xl mb-[10px] ">PAY 2</h1>
             <h2 className="text-[#B8860B] text-sm">STARTS FROM</h2>
             <h1 className=" text-white text-5xl md:text-5xl lg:text-6xl font-xl mb-[10px] md:mb-[20px] ">3000 TK</h1>
-            <h2 className="text-white">Book your dream getaway now and enjoy exclusive savings on our luxurious hotel rooms. Don't miss this limited-time offer for an unforgettable stay.!</h2>
+            <h2 className="text-white">Book your dream getaway now and enjoy exclusive savings on our luxurious hotel rooms. Don't miss this limited-time offer for an unforgettable stay   <span className="font-bold text-[#c97d4a]">!!</span></h2>
           </div>
         </div>
       </div>

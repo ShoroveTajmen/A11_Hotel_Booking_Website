@@ -123,12 +123,12 @@ const RoomDetails = () => {
     <div>
       <div>
         {" "}
-        <div className="w-[1500px] h-[600px]  mt-10 flex">
-          <div className="w-[800px]">
+        <div className="w-[1500px]   mt-10 ">
+          <div className="w-[800px] ml-[400px] bg-gray-300 h-[600px]">
             <div>
-              <img className="w-[600px] h-[350px]" src={roomPic} alt="" />
+              <img className="w-[800px] h-[400px]" src={roomPic} alt="" />
             </div>
-            <div className="flex items-center ml-[50px] gap-4 mx-auto mt-6">
+            <div className="flex items-center ml-[160px] gap-4 mx-auto mt-6">
               <img
                 className="w-[150px] h-[150px]"
                 src={relatedRoomPic1}
@@ -146,12 +146,27 @@ const RoomDetails = () => {
               />
             </div>
           </div>
-          <div className="p-6">
-            <h2 className="text-4xl font-bold mb-8">BOOKING</h2>
-            <h2>{_id}</h2>
-            <h2>Room Price: {roomPrice}</h2>
-            <h2>Available Seats: {availability}</h2>
-            <label htmlFor="">Select a booking Date : </label>
+          <div className="w-[700px] h-[300px] mx-auto ml-[450px] text-center border border-[#c97d4a] mt-8 bg-white">
+            <h2 className="text-4xl font-bold mb-8">Room Info</h2>
+            <div className="text-lg text-[#c97d4a]">
+              {" "}
+              <h2 className="mb-[20px]">{roomDescription}</h2>
+              <h2>Room Price: {roomPrice} TK Per Night</h2>
+              <h2>Room Size: {roomSize}</h2>
+              <h2>Special Offer: {specialOffers}</h2>
+            </div>
+          </div>
+          <div className="p-6 border border-gray-300 ml-[100px] text-center mb-[100px]  mt-[50px] bg-gray-300">
+            <h2 className="text-4xl font-bold mb-8">BOOKING NOW</h2>
+            <h2 className="text-xl font-bold text-[#c97d4a] mb-[10px]">
+              Room Price: {roomPrice} TK Per Night
+            </h2>
+            <h2 className="text-xl font-bold text-[#c97d4a] mb-[10px]">
+              Seat Availabilty: {availability}
+            </h2>
+            <label htmlFor="" className="text-xl font-bold text-[#c97d4a]">
+              Select Your Booking Date :{" "}
+            </label>
             <DatePicker
               className="border border-black"
               selected={selectedDate}
@@ -186,31 +201,24 @@ const RoomDetails = () => {
                 </div>
               </div>
             </dialog>
-            <div className="mt-[100px]">
-              <h2 className="text-5xl font-bold">Room Review</h2>
-              {
-                roomReview && <p>{roomReview.length}</p>
-              }
-              {roomReview && roomReview.length > 0 ? (
-                roomReview.map((review) => (
-                  <RoomReview key={review._id} review={review}></RoomReview>
-                ))
-              ) : (
-                <p className="col-span-4 text-center text-[#c97d4a] text-4xl font-bold mt-[100px] mb-[200px]">
-                  No review found based on this room. Check back later for new
-                  arrivals !!
-                </p>
-              )}
+            <div className="mt-[100px] ">
+              <h2 className="text-5xl font-bold mb-8">Room Review</h2>
+              {roomReview && <p className="w-[300px] mb-[20px] mx-auto border border-[#c97d4a] text-[#c97d4a] font-bold">Number Of Review : {roomReview.length}</p>}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  lg:gap-5 ">
+                {" "}
+                {roomReview && roomReview.length > 0 ? (
+                  roomReview.map((review) => (
+                    <RoomReview key={review._id} review={review}></RoomReview>
+                  ))
+                ) : (
+                  <p className="col-span-4 text-center text-[#c97d4a] text-4xl font-bold mt-[50px] mb-[100px]">
+                    No review found based on this room. Check back later for new
+                    arrivals !!
+                  </p>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-        <div className="w-[600px] h-[600px] border border-red-600 mt-8">
-          <h2 className="text-3xl text-bold">Room Description</h2>
-          <h2>{roomDescription}</h2>
-          <h2>Room Price: {roomPrice}</h2>
-          <h2>Room Size: {roomSize}</h2>
-          <h2>Avaiablity: {availability}</h2>
-          <h2>Special Offer: {specialOffers}</h2>
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-8 ml-[90px] md:ml-[40px] lg:ml-[150px] pt-[100px] ">
           {/* 1st part */}
           <div className="col-span-2 w-[300px] md:w-[200px] lg:w-[300px] ">
-            <h1 className="text-3xl font-bold mb-3 md:mb-7 text-[#c97d4a]">
+            {/* <h1 className="text-3xl font-bold mb-3 md:mb-7 text-[#c97d4a]">
               INFORMATION
             </h1>
             <h1 className="">About us</h1>
@@ -23,7 +23,8 @@ const Footer = () => {
             <h1 className="mt-2">Manufactures</h1>
             <h1 className="mt-2">Privacy Policy</h1>
             <h1 className="mt-2">Terms & Condition</h1>
-            <h1 className="mt-2 mb-8 lg:mb-0">Blog</h1>
+            <h1 className="mt-2 mb-8 lg:mb-0">Blog</h1> */}
+            <img className="w-[400px] h-[300px]" src="https://i.ibb.co/bPBFKBr/logo3.jpg" alt="" />
           </div>
           {/* 2nd part */}
           <div className="col-span-2 w-[300px] md:w-[200px] lg:w-[300px] text-white">

@@ -47,9 +47,9 @@ const UpdateBookingDate = () => {
   }
 
   return (
-    <div className="mt-12 mb-12">
+    <div className="mt-12 mb-12 w-[700px] mx-auto h-[300px]">
       <div>
-        <label htmlFor="">Select a new booking date: </label>
+        <label htmlFor="" className="text-2xl font-bold">Select a new booking date: </label>
         <DatePicker
           className="border border-black text-black"
           selected={selectedDate}
@@ -57,7 +57,7 @@ const UpdateBookingDate = () => {
           dateFormat="dd/MM/yyyy"
         ></DatePicker>
       </div>
-      <button onClick={()=>handelUpdatedDate(_id)} className="btn btn-primary">Booking Update</button>
+      <button onClick={()=>handelUpdatedDate(_id)} className="btn bg-[#c97d4a] text-white border-none ml-[100px] mt-[30px]">Booking Update</button>
     </div>
   );
 };
