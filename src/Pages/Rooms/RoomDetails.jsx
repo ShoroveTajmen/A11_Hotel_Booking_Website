@@ -1,31 +1,14 @@
 /* eslint-disable react/prop-types */
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 import moment from "moment/moment";
-import { useLoaderData } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const RoomDetails = () => {
-  const roomData = useLoaderData();
-  // console.log(roomData)
-  const {
-    _id,
-    availability,
-    relatedRoomPic1,
-    relatedRoomPic2,
-    relatedRoomPic3,
-    roomDescription,
-    roomPic,
-    roomPrice,
-    roomSize,
-    specialOffers,
-  } = roomData;
-
-
-
-  console.log(availability);
+  const { _id } = useParams();
 
   const { user } = useContext(AuthContext);
   const userEmail = user.email;
@@ -35,8 +18,42 @@ const RoomDetails = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const formattedDate = moment(selectedDate).format("DD/MM/YYYY");
 
+  //for update available seats
+  const [roomData, setRoomData] = useState(null);
+  const [loading, setLoading] = useState(true); //loading state
+
+  useEffect(() => {
+   
+    fetch(`http://localhost:5001/roomData/${_id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setRoomData(data);
+      })
+      .catch((err) => {
+        console.log(err);
+    
+      });
+  }, [_id, loading]);
+
+  // if (loading) {
+  //   return <div>Loading...</div>; // Display loading message while fetching data
+  // }
+
+  const {
+    availability,
+    relatedRoomPic1,
+    relatedRoomPic2,
+    relatedRoomPic3,
+    roomDescription,
+    roomPic,
+    roomPrice,
+    roomSize,
+    specialOffers,
+  } = roomData || {};
+  console.log(availability);
+
   const handleRoomBook = (_id) => {
-    //   //seat availability related functionality
+    //seat availability related functionality
     if (availability <= 0) {
       console.log("This is booked for all available dates.");
       return;
@@ -53,13 +70,15 @@ const RoomDetails = () => {
         .then((data) => {
           console.log(data);
           if (data.modifiedCount > 0) {
+            setLoading(!loading)
             Swal.fire("available seat data update successfully", "success");
+
           }
         });
     }
 
-    //   //send booking related room data object to the server
-    //   // console.log(formattedDate)
+    //send booking related room data object to the server
+    // console.log(formattedDate)
     const bookingsData = {
       roomPrice,
       roomDescription,
@@ -69,7 +88,7 @@ const RoomDetails = () => {
     };
     console.log(bookingsData);
 
-    //   //now send data to the server
+    //now send data to the server
     fetch("http://localhost:5001/roomBooks", {
       method: "POST",
       headers: {
