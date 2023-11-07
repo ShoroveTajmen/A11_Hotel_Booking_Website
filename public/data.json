@@ -1,0 +1,69 @@
+[
+  {
+    "roomPic": "https://i.ibb.co/vLJz8xC/1st.jpg",
+    "roomDescription": "Deluxe Suite with Ocean View",
+    "roomSize": "500 sq. ft",
+    "specialOffers": "10% off for a week-long stay!",
+    "availability": 3,
+    "roomPrice": 8000,
+    "relatedRoomPic1": "https://i.ibb.co/30DZ3WD/1st-related.jpg",
+    "relatedRoomPic2": "https://i.ibb.co/VDHCcsQ/1strelated2.jpg",
+    "relatedRoomPic3": "https://i.ibb.co/wJv4HST/1strelated3.jpg"
+  },
+  {
+    "roomPic": "https://i.ibb.co/JdqtDqj/2nd.jpg",
+    "roomDescription": "Luxury Villa with Private Pool",
+    "roomSize": "1200 sq. ft",
+    "specialOffers": "15% off on your first booking!",
+    "availability": 2,
+    "roomPrice": 15000,
+    "relatedRoomPic1": "https://i.ibb.co/6vnHCYG/2ndrelated1.jpg",
+    "relatedRoomPic2": "https://i.ibb.co/LxxDQKj/2nd-related2.jpg",
+    "relatedRoomPic3": "https://i.ibb.co/6vnHCYG/2ndrelated1.jpg"
+  },
+  {
+    "roomPic": "https://i.ibb.co/M24LJMK/3rd.png",
+    "roomDescription": "Standard Room with City View",
+    "roomSize": "300 sq. ft",
+    "specialOffers": "Free breakfast included!",
+    "availability": 4,
+    "roomPrice": 5000,
+    "relatedRoomPic1": "https://i.ibb.co/r2KGm8B/3rd1.jpg",
+    "relatedRoomPic2": "https://i.ibb.co/LNQLgMd/3rd2.jpg",
+    "relatedRoomPic3": "https://i.ibb.co/16YwrFz/3rd3.jpg"
+  },
+  {
+    "roomPic": "https://i.ibb.co/M24LJMK/3rd.png",
+    "roomDescription": "Standard Room with City View",
+    "roomSize": "300 sq. ft",
+    "specialOffers": "Free breakfast included!",
+    "availability": 2,
+    "roomPrice": 5000,
+    "relatedRoomPic1": "https://i.ibb.co/r2KGm8B/3rd1.jpg",
+    "relatedRoomPic2": "https://i.ibb.co/LNQLgMd/3rd2.jpg",
+    "relatedRoomPic3": "https://i.ibb.co/16YwrFz/3rd3.jpg"
+  },
+  {
+    "roomPic": "https://i.ibb.co/M24LJMK/3rd.png",
+    "roomDescription": "Standard Room with City View",
+    "roomSize": "300 sq. ft",
+    "specialOffers": "Free breakfast included!",
+    "availability": 5,
+    "roomPrice": 5000,
+    "relatedRoomPic1": "https://i.ibb.co/r2KGm8B/3rd1.jpg",
+    "relatedRoomPic2": "https://i.ibb.co/LNQLgMd/3rd2.jpg",
+    "relatedRoomPic3": "https://i.ibb.co/16YwrFz/3rd3.jpg"
+  },
+  {
+    "roomPic": "https://i.ibb.co/M24LJMK/3rd.png",
+    "roomDescription": "Standard Room with City View",
+    "roomSize": "300 sq. ft",
+    "specialOffers": "Free breakfast included!",
+    "availability": 3,
+    "roomPrice": 5000,
+    "relatedRoomPic1": "https://i.ibb.co/r2KGm8B/3rd1.jpg",
+    "relatedRoomPic2": "https://i.ibb.co/LNQLgMd/3rd2.jpg",
+    "relatedRoomPic3": "https://i.ibb.co/16YwrFz/3rd3.jpg"
+  }
+
+]

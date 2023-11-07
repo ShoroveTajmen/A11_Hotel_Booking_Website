@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "room_pic": "https://i.ibb.co/vX8NPkf/room1.jpg",
+    "price": 4000,
+    "description": "Elegant suite with a view of the city skyline, perfect for a romantic getaway."
+  },
+  {
+    "id": 2,
+    "room_pic": "https://i.ibb.co/ydhk9Z7/room2.jpg",
+    "price": 3500,
+    "description": "Spacious family room with modern amenities and a cozy atmosphere."
+  },
+  {
+    "id": 3,
+    "room_pic": "https://i.ibb.co/0CwnHqp/room3.jpg",
+    "price": 5000,
+    "description": "Luxurious penthouse with a private terrace, offering breathtaking ocean views."
+  },
+  {
+    "id": 4,
+    "room_pic": "https://i.ibb.co/2gZLBZs/room5.jpg",
+    "price": 3200,
+    "description": "Comfortable double room with a garden view, ideal for a peaceful retreat."
+  },
+  {
+    "id": 5,
+    "room_pic": "https://i.ibb.co/JCkgcPL/room6.jpg",
+    "price": 3800,
+    "description": "Executive suite with a work area, perfect for business travelers."
+  },
+  {
+    "id": 6,
+    "room_pic": "https://i.ibb.co/F8qx6zb/room7.jpg",
+    "price": 4500,
+    "description": "Secluded villa with a private pool and lush tropical surroundings."
+  }
+]

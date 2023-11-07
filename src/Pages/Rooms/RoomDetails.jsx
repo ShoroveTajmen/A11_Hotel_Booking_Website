@@ -49,8 +49,6 @@ const RoomDetails = () => {
       });
   }, [_id, loading]);
 
-
-
   const {
     availability,
     relatedRoomPic1,
@@ -91,7 +89,8 @@ const RoomDetails = () => {
     }
 
     //send booking related room data object to the server
-    // console.log(formattedDate) 
+    // console.log(formattedDate)
+
     const bookingsData = {
       roomId,
       roomPrice,
@@ -187,6 +186,22 @@ const RoomDetails = () => {
                 </div>
               </div>
             </dialog>
+            <div className="mt-[100px]">
+              <h2 className="text-5xl font-bold">Room Review</h2>
+              {
+                roomReview && <p>{roomReview.length}</p>
+              }
+              {roomReview && roomReview.length > 0 ? (
+                roomReview.map((review) => (
+                  <RoomReview key={review._id} review={review}></RoomReview>
+                ))
+              ) : (
+                <p className="col-span-4 text-center text-[#c97d4a] text-4xl font-bold mt-[100px] mb-[200px]">
+                  No review found based on this room. Check back later for new
+                  arrivals !!
+                </p>
+              )}
+            </div>
           </div>
         </div>
         <div className="w-[600px] h-[600px] border border-red-600 mt-8">
@@ -198,7 +213,9 @@ const RoomDetails = () => {
           <h2>Special Offer: {specialOffers}</h2>
         </div>
       </div>
-     
+      {/* {
+        roomReview && <RoomReview roomReview={roomReview} setRoomReview={setRoomReview}></RoomReview>
+      } */}
     </div>
   );
 };
