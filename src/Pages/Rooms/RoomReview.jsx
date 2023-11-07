@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
 
 const RoomReview = ({review}) => {
 const {userName, comment, date, rating} = review || {};

@@ -213,9 +213,6 @@ const RoomDetails = () => {
           <h2>Special Offer: {specialOffers}</h2>
         </div>
       </div>
-      {/* {
-        roomReview && <RoomReview roomReview={roomReview} setRoomReview={setRoomReview}></RoomReview>
-      } */}
     </div>
   );
 };

@@ -1,26 +1,33 @@
 /* eslint-disable react/prop-types */
-
 import moment from "moment";
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 /* eslint-disable no-unused-vars */
 const MyBookingList = ({ room, findUserRoom, setFindUserRoom }) => {
-  const { _id, roomDescription, roomPrice, selectedDate, userEmail, roomPic, roomId } =
-    room || {};
-  //   console.log(userEmail);
-const {user} = useContext(AuthContext);
-const userName = user.displayName;
-// console.log(user.displayName)
+  const {
+    _id,
+    roomDescription,
+    roomPrice,
+    selectedDate,
+    userEmail,
+    roomPic,
+    roomId,
+  } = room || {};
+  //console.log(userEmail);
+  const { user } = useContext(AuthContext);
+  const userName = user.displayName;
+  // console.log(user.displayName)
 
   //tract current date
   const currentDate = moment();
   const formattedDate = moment(selectedDate, "DD/MM/YYYY");
-  //   console.log(currentDate);
+  //console.log(currentDate);
   // Calculate the date before which a booking can be deleted (e.g., one day before the booking date)
   const deleteBeforeBookingDate = formattedDate.clone().subtract(1, "days");
-  //   console.log(deleteBeforeBookingDate);
+  //console.log(deleteBeforeBookingDate);
 
   //booking delete function
   const handleDelete = (_id) => {
@@ -86,7 +93,7 @@ const userName = user.displayName;
       rating,
       comment,
       date,
-      roomId
+      roomId,
     };
     console.log(review);
 
@@ -132,9 +139,11 @@ const userName = user.displayName;
               >
                 Delete Booking
               </button>
-              <button className="bg-black text-white p-3  font-bold  mt-[50px]">
-                Update Booking
-              </button>
+              <Link to={`/updateDate/${_id}`}>
+                <button className="bg-black text-white p-3  font-bold  mt-[50px]">
+                  Update Date
+                </button>
+              </Link>
             </div>
             <div className="w-[200px]">
               <h2>Added Room Review:</h2>
@@ -160,11 +169,11 @@ const userName = user.displayName;
                   </div>
                   {/* timestamp */}
                   <div className="form-control">
-                    <input 
-                    type="date"
-                    name="date" 
-                    placeholder="Put a cooment"
-                    className="input border border-black input-xs w-full max-w-xs"
+                    <input
+                      type="date"
+                      name="date"
+                      placeholder="Put a cooment"
+                      className="input border border-black input-xs w-full max-w-xs"
                     />
                   </div>
                   <input
