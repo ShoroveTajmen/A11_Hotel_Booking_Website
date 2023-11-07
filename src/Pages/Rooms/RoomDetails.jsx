@@ -171,7 +171,8 @@ const RoomDetails = () => {
               className="border border-black"
               selected={selectedDate}
               onChange={(date) => setSelectedDate(date)}
-              dateFormat="dd/MM/yyyy"
+              // dateFormat="dd/MM/yyyy"
+              minDate={new Date()}
             ></DatePicker>{" "}
             <br />
             <button

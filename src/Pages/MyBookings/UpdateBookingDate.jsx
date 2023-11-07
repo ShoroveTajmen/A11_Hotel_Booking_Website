@@ -54,7 +54,8 @@ const UpdateBookingDate = () => {
           className="border border-black text-black"
           selected={selectedDate}
           onChange={(date) => setSelectedDate(date)}
-          dateFormat="dd/MM/yyyy"
+          // dateFormat="dd/MM/yyyy"
+          minDate={new Date()}
         ></DatePicker>
       </div>
       <button onClick={()=>handelUpdatedDate(_id)} className="btn bg-[#c97d4a] text-white border-none ml-[100px] mt-[30px]">Booking Update</button>
