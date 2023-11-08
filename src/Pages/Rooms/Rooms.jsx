@@ -7,7 +7,7 @@ const Rooms = () => {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(50000);
 
-  const url = "http://localhost:5001/roomData";
+  const url = "https://hotel-booking-server-steel.vercel.app/roomData";
 
   useEffect(() => {
     axios.get(url).then((res) => {

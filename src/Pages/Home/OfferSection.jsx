@@ -1,9 +1,9 @@
 const OfferSection = () => {
   return (
     <div>
-      <div className="relative w-full h-[500px]">
+      <div className="relative w-full h-[500px] mt-[100px] md:mt-[0px] lg:mt-[0px]">
         {/* background image */}
-        <div className="absolute top-0 right-0 bottom-0 left-0 bg-[url('https://i.ibb.co/2gZLBZs/room5.jpg')] bg-cover bg-center bg-no-repeat lg:h-[500px] md:h-[700px]"></div>
+        <div className="absolute top-0 right-0 bottom-0 left-0 bg-[url('https://i.ibb.co/2gZLBZs/room5.jpg')] bg-cover bg-center bg-no-repeat lg:h-[500px] md:h-[500px]"></div>
 
         {/* white overlay */}
         <div className="absolute top-0 right-0 md:right-0 lg:right-[600px] bottom-0 left-0 bg-black opacity-50 rounded-r-[250px]"></div>
@@ -16,7 +16,7 @@ const OfferSection = () => {
           className="relative ml-[19px] md:ml-[100px] lg:ml-[40px]"
           data-aos="zoom-in"
         >
-          <div className="absolute mt-[180px] md:mt-[140px]  lg:mt-[80px] w-[650px] mx-auto lg:ml-[40px]  ">
+          <div className="absolute mt-[80px] md:mt-[100px]  lg:mt-[80px] w-[650px] mx-auto lg:ml-[40px]  ">
           <h2 className="text-[#B8860B] text-sm mb-8">GRAP YOUR SPECIAL OFFER...</h2>
             <h1 className=" text-[#F5DEB3] text-2xl md:text-5xl lg:text-6xl font-xl mb-[10px] md:mb-[10px] ">
               STAY 3 !
@@ -24,7 +24,7 @@ const OfferSection = () => {
             <h1 className=" text-white text-5xl md:text-5xl lg:text-6xl font-xl mb-[10px] ">PAY 2</h1>
             <h2 className="text-[#B8860B] text-sm">STARTS FROM</h2>
             <h1 className=" text-white text-5xl md:text-5xl lg:text-6xl font-xl mb-[10px] md:mb-[20px] ">3000 TK</h1>
-            <h2 className="text-white">Book your dream getaway now and enjoy exclusive savings on our luxurious hotel rooms. Don't miss this limited-time offer for an unforgettable stay   <span className="font-bold text-[#c97d4a]">!!</span></h2>
+            <h2 className="text-white w-[300px] md:w-[400px] lg:w-[700px]">Book your dream getaway now and enjoy exclusive savings on our luxurious hotel rooms. Don't miss this limited-time offer for an unforgettable stay   <span className="font-bold text-[#c97d4a]">!!</span></h2>
           </div>
         </div>
       </div>

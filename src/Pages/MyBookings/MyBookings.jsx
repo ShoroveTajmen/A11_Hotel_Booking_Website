@@ -13,12 +13,12 @@ const MyBookings = () => {
 
 //booking data load using useEffect
 const [bookigData, setBookingData] = useState([]);
-const url = `http://localhost:5001/roomBooks?email=${user?.email}`;
+const url = `https://hotel-booking-server-steel.vercel.app/roomBooks?email=${user?.email}`;
 useEffect(()=>{
   fetch(url, {credentials: 'include'})
   .then(res => res.json())
   .then(data => setBookingData(data))
-},[])
+},[url])
 console.log(bookigData);
 
 

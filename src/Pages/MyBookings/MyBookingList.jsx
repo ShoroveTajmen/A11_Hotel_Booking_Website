@@ -45,7 +45,7 @@ const MyBookingList = ({ room, findUserRoom, setFindUserRoom }) => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5001/roomBooks/${_id}`, {
+          fetch(`https://hotel-booking-server-steel.vercel.app/roomBooks/${_id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -98,7 +98,7 @@ const MyBookingList = ({ room, findUserRoom, setFindUserRoom }) => {
     console.log(review);
 
     //send roomReview data to the server
-    fetch("http://localhost:5001/roomReview", {
+    fetch("https://hotel-booking-server-steel.vercel.app/roomReview", {
       method: "POST",
       headers: {
         "content-type": "application/json",

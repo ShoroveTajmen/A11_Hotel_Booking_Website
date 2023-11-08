@@ -1,9 +1,9 @@
 const NewsLetter = () => {
   return (
     <div>
-      <div className="relative w-[1200px] h-[300px] mx-auto bottom-[-130px]">
+      <div className="relative w-[370px] md:w-[680px] lg:w-[1200px] h-[300px] mx-auto bottom-[-130px]">
         {/* background image */}
-        <div className="absolute top-0 right-0 bottom-0 left-0 bg-[url('https://i.ibb.co/JBqRbyf/frame2.jpg')] bg-cover bg-center bg-no-repeat lg:h-[300px] md:h-[700px] "></div>
+        <div className="absolute top-0 right-0 bottom-0 left-0 bg-[url('https://i.ibb.co/JBqRbyf/frame2.jpg')] bg-cover bg-center bg-no-repeat h-[300px] md:h-[300px] lg:h-[300px] "></div>
 
         {/* white overlay */}
         <div className="absolute top-0 right-0 md:right-0 lg:right-[0px] bottom-0 left-0 bg-[#B8860B] opacity-90 "></div>
@@ -11,7 +11,7 @@ const NewsLetter = () => {
           className="relative ml-[19px] md:ml-[100px] lg:ml-[40px]"
           data-aos="zoom-in"
         >
-          <div className="absolute mt-[180px] md:mt-[140px]  lg:mt-[80px]   lg:ml-[40px] ">
+          <div className="absolute mt-[100px] md:mt-[100px]  lg:mt-[80px]   lg:ml-[40px] ">
             <div>
               <h2>NEWSLETTER</h2>
               <h1 className=" text-[#FFF8DC] text-2xl md:text-5xl lg:text-6xl font-xl mb-[10px] md:mb-[10px] ">

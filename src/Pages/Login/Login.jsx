@@ -42,7 +42,7 @@ const Login = () => {
         console.log(res.user);
         const user = {email};
         //get acces token
-        axios.post('http://localhost:5001/jwt', user, {withCredentials: true})
+        axios.post('https://hotel-booking-server-steel.vercel.app/jwt', user, {withCredentials: true})
         .then(res => {
           console.log(res.data)
           if(res.data.success){

@@ -26,7 +26,7 @@ const RoomDetails = () => {
 
   //get specific room review
   useEffect(() => {
-    fetch(`http://localhost:5001/roomReview/${_id}`)
+    fetch(`https://hotel-booking-server-steel.vercel.app/roomReview/${_id}`)
       .then((res) => res.json())
       .then((data) => {
         setRoomReview(data);
@@ -39,7 +39,7 @@ const RoomDetails = () => {
 
   //loading specific room data
   useEffect(() => {
-    fetch(`http://localhost:5001/roomData/${_id}`)
+    fetch(`https://hotel-booking-server-steel.vercel.app/roomData/${_id}`)
       .then((res) => res.json())
       .then((data) => {
         setRoomData(data);
@@ -71,7 +71,7 @@ const RoomDetails = () => {
       return;
     } else {
       //send avaiable seats data to the server
-      fetch(`http://localhost:5001/roomData/${_id}`, {
+      fetch(`https://hotel-booking-server-steel.vercel.app/roomData/${_id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -102,7 +102,7 @@ const RoomDetails = () => {
     console.log(bookingsData);
 
     //now send data to the server
-    fetch("http://localhost:5001/roomBooks", {
+    fetch("https://hotel-booking-server-steel.vercel.app/roomBooks", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -123,12 +123,12 @@ const RoomDetails = () => {
     <div>
       <div>
         {" "}
-        <div className="w-[1500px]   mt-10 ">
-          <div className="w-[800px] ml-[400px] bg-gray-300 h-[600px]">
+        <div className="   mt-10 ">
+          <div className="w-[400px] md:w-[750px] lg:w-[800px] ml-[0px] md:ml-[0px] lg:ml-[400px] bg-gray-300 h-[1000px] md:h-[600px] lg:h-[600px]">
             <div>
               <img className="w-[800px] h-[400px]" src={roomPic} alt="" />
             </div>
-            <div className="flex items-center ml-[160px] gap-4 mx-auto mt-6">
+            <div className="flex flex-col md:flex-row lg:flex-row items-center ml-[10px] md:ml-[160px] lg:ml-[160px] gap-4 mx-auto mt-6">
               <img
                 className="w-[150px] h-[150px]"
                 src={relatedRoomPic1}
@@ -146,7 +146,7 @@ const RoomDetails = () => {
               />
             </div>
           </div>
-          <div className="w-[700px] h-[300px] mx-auto ml-[450px] text-center border border-[#c97d4a] mt-8 bg-white">
+          <div className="w-[400px] md:w-[500px] lg:w-[700px] h-[300px] mx-auto ml-[0px] md:ml-[150px] lg:ml-[450px] text-center border border-[#c97d4a] mt-8 bg-white">
             <h2 className="text-4xl font-bold mb-8">Room Info</h2>
             <div className="text-lg text-[#c97d4a]">
               {" "}
@@ -156,7 +156,7 @@ const RoomDetails = () => {
               <h2>Special Offer: {specialOffers}</h2>
             </div>
           </div>
-          <div className="p-6 border border-gray-300 ml-[100px] text-center mb-[100px]  mt-[50px] bg-gray-300">
+          <div className="p-6 w-[400px] md:w-[400px] lg:w-[1400px] border border-gray-300 ml-[0px] md:ml-[200px] lg:ml-[100px] text-center mb-[100px]  mt-[50px] bg-gray-300">
             <h2 className="text-4xl font-bold mb-8">BOOKING NOW</h2>
             <h2 className="text-xl font-bold text-[#c97d4a] mb-[10px]">
               Room Price: {roomPrice} TK Per Night

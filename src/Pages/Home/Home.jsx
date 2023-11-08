@@ -11,7 +11,7 @@ import NewsLetter from "./NewsLetter";
 const Home = () => {
     const data = useLoaderData();
     // const [hotelInfo, setHotelInfo] = useState([]);
-    // const url = 'http://localhost:5001/trydata';
+    // const url = 'https://hotel-booking-server-steel.vercel.app/trydata';
 
     // useEffect(()=> {
     //     axios.get(url, {withCredentials: true})

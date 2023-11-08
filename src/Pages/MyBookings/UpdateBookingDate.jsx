@@ -30,7 +30,7 @@ const UpdateBookingDate = () => {
     console.log(updateDate);
 
     //send new date to the server
-    fetch(`http://localhost:5001/roomBooks/${_id}`, {
+    fetch(`https://hotel-booking-server-steel.vercel.app/roomBooks/${_id}`, {
         method: "PUT",
         headers: {
             "content-type": "application/json",
@@ -47,7 +47,7 @@ const UpdateBookingDate = () => {
   }
 
   return (
-    <div className="mt-12 mb-12 w-[700px] mx-auto h-[300px]">
+    <div className="mt-12 mb-12 w-[400px] md:w-[400px] lg:w-[700px] mx-auto h-[300px]">
       <div>
         <label htmlFor="" className="text-2xl font-bold">Select a new booking date: </label>
         <DatePicker

@@ -32,13 +32,13 @@ const myCreateRoute = createBrowserRouter([
             <MyBookings></MyBookings>
           </PrivateRoute>
         ),
-        // loader: () => fetch("http://localhost:5001/roomBooks"),
+        // loader: () => fetch("https://hotel-booking-server-steel.vercel.app/roomBooks"),
       },
       {
         path: "/updateDate/:_id",
         element: <UpdateBookingDate></UpdateBookingDate>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5001/roomBooks/${params._id}`),
+          fetch(`https://hotel-booking-server-steel.vercel.app/roomBooks/${params._id}`),
       },
       {
         path: "/roomDetails/:_id", //_id spelling same as link _id
@@ -48,7 +48,7 @@ const myCreateRoute = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5001/roomData/${params._id}`),
+          fetch(`https://hotel-booking-server-steel.vercel.app/roomData/${params._id}`),
       },
       {
         path: "/register",

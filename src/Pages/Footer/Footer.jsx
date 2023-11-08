@@ -10,21 +10,12 @@ import {
 const Footer = () => {
   return (
     <div className="">
-      <div className="bg-black h-[1200px] md:h-[600px] lg:h-[600px] text-white pt-[100px]">
+      <div className="bg-black h-[1400px] md:h-[700px] lg:h-[600px] text-white pt-[100px]">
         {/* footer container div */}
-        <div className="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-8 ml-[90px] md:ml-[40px] lg:ml-[150px] pt-[100px] ">
+        <div className="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-8 ml-[50px] md:ml-[10px] lg:ml-[150px] pt-[100px] ">
           {/* 1st part */}
-          <div className="col-span-2 w-[300px] md:w-[200px] lg:w-[300px] ">
-            {/* <h1 className="text-3xl font-bold mb-3 md:mb-7 text-[#c97d4a]">
-              INFORMATION
-            </h1>
-            <h1 className="">About us</h1>
-            <h1 className="mt-2">Customer Service</h1>
-            <h1 className="mt-2">Manufactures</h1>
-            <h1 className="mt-2">Privacy Policy</h1>
-            <h1 className="mt-2">Terms & Condition</h1>
-            <h1 className="mt-2 mb-8 lg:mb-0">Blog</h1> */}
-            <img className="w-[400px] h-[300px]" src="https://i.ibb.co/bPBFKBr/logo3.jpg" alt="" />
+          <div className="col-span-2 w-[300px] md:w-[100px] lg:w-[300px] ">
+            <img className="w-[500px] md:w-[100px] lg:w-[500px] h-[300px]" src="https://i.ibb.co/bPBFKBr/logo3.jpg" alt="" />
           </div>
           {/* 2nd part */}
           <div className="col-span-2 w-[300px] md:w-[200px] lg:w-[300px] text-white">
@@ -39,26 +30,26 @@ const Footer = () => {
             <h1 className="mt-2 mb-8 lg:mb-0">Latest Post</h1>
           </div>
           {/* 3rd part */}
-          <div className="col-span-2 w-[300px] md:w-[200px] lg:w-[300px]">
+          <div className="col-span-2 w-[300px] md:w-[100px] lg:w-[300px]">
             <h1 className="text-3xl font-bold mb-3 md:mb-7 text-[#c97d4a]">
               ROOMS TYPE
             </h1>
-            <div className="flex gap-2 ">
+            <div className=" gap-2 ">
               {" "}
               <h1 className="border border-gray-600 p-2">Presidential Suite</h1>
               <h1 className="border border-gray-600 p-2">Royal Penthouse</h1>
               <h1 className="border border-gray-600 p-2">Executive Villa</h1>
             </div>
-            <div className="flex gap-2 mt-2 ">
+            {/* <div className=" gap-2 mt-2 ">
               {" "}
               <h1 className="border border-gray-600 p-2">Oceanfront Deluxe</h1>
               <h1 className="border border-gray-600 p-2">Luxury Spa Retreat</h1>
               <h1 className="border border-gray-600 p-2">Garden View Chalet</h1>
-            </div>
+            </div> */}
           </div>
           {/* 4th part */}
-          <div className="col-span-2 w-[300px] md:w-[200px] lg:w-[300px]">
-            <h1 className="text-3xl font-bold mt-8 lg:mt-0 mb-3 md:mb-7 text-[#c97d4a]">
+          <div className="col-span-2 w-[300px] md:w-[150px] lg:w-[300px]">
+            <h1 className="text-3xl font-bold mt-8 md:mt-[0px] lg:mt-0 mb-3 md:mb-7 text-[#c97d4a]">
               STAY WITH US
             </h1>
             <p className="">
@@ -89,7 +80,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <h1 className="mt-[100px] text-center font-semibold">
+        <h1 className="mt-[100px] md:mt-[50px] lg:mt-[50px] text-center font-semibold">
           &copy; 2023 Online Hotel Booking. All Rights Reserved.
         </h1>
       </div>

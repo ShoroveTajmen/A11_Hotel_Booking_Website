@@ -5,7 +5,7 @@ const FeaturedRoomsDetail = ({data}) => {
     const {id, room_pic, price, description} = data || {};
     return (
         <div>      
-          <div className="ml-[65px] lg:ml-0 w-[300px] h-[450px] bg-base-100 shadow-xl border border-[#c97d4a]">
+          <div className="md:ml-[35px] ml-[60px] lg:ml-0 w-[300px] h-[450px] bg-base-100 shadow-xl border border-[#c97d4a]">
             <figure>
               <img className="w-full h-[200px]" src={room_pic} alt="Product" />
             </figure>

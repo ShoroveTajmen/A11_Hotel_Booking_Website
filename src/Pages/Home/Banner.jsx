@@ -9,14 +9,14 @@ const Banner = () => {
         {/* white overlay */}
         <div className="absolute top-0 right-0 md:right-0 lg:right-0 bottom-0 left-0 bg-black opacity-70 "></div>
         <div
-          className="relative ml-[19px] md:ml-[100px] lg:ml-[40px]"
+          className="relative ml-[19px] md:ml-[10px] lg:ml-[40px] p-2"
           data-aos="zoom-in"
         >
-          <div className="absolute mt-[180px] md:mt-[140px]  lg:mt-[200px] w-[650px] mx-auto ml-[440px] text-center ">
+          <div className="absolute mt-[180px] md:mt-[140px]  lg:mt-[200px] lg:w-[650px] mx-auto md:ml-[0px] lg:ml-[440px] text-center ">
             <h1 className=" text-white text-5xl md:text-5xl lg:text-4xl font-xl mb-[10px] md:mb-[20px] lg:mb-[30px]">
             Luxury, redefined extraordinary !
             </h1>
-            <img className="w-[500px] h-[30px] ml-[80px]" src="https://i.ibb.co/9gzjfpy/line2.jpg" alt="" />
+            <img className="w-[500px] h-[30px] md:ml-[80px] lg:ml-[80px]" src="https://i.ibb.co/9gzjfpy/line2.jpg" alt="" />
             <p className="text-sm md:text-xl lg:text-sm font-semibold mb-[10px] md:mb-[20px] md:mt-[10px] lg:mt-[30px] text-[#FAF0E6]">
             Indulge in the epitome of sophistication and comfort at our luxury hotel, where every detail is meticulously crafted to ensure an unforgettable and opulent experience.
             </p>

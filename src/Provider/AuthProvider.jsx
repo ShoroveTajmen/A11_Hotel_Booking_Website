@@ -62,7 +62,7 @@ const AuthProvider = ({ children }) => {
       if (currentUser) {
         axios
           .post(
-            "http://localhost:5001/jwt",
+            "https://hotel-booking-server-steel.vercel.app/jwt",
             loggedUser,
             {
               withCredentials: true,
@@ -74,7 +74,7 @@ const AuthProvider = ({ children }) => {
       } else {
         axios
           .post(
-            "http://localhost:5001/logout",
+            "https://hotel-booking-server-steel.vercel.app/logout",
             loggedUser,
             {
               withCredentials: true,
