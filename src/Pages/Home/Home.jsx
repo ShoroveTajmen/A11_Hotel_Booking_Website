@@ -7,28 +7,34 @@ import FeaturedRooms from "./FeaturedRooms";
 import Map from "./Map";
 import OfferSection from "./OfferSection";
 import NewsLetter from "./NewsLetter";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
-    const data = useLoaderData();
-    // const [hotelInfo, setHotelInfo] = useState([]);
-    // const url = 'https://hotel-booking-server-steel.vercel.app/trydata';
+  const data = useLoaderData();
+  // const [hotelInfo, setHotelInfo] = useState([]);
+  // const url = 'https://hotel-booking-server-steel.vercel.app/trydata';
 
-    // useEffect(()=> {
-    //     axios.get(url, {withCredentials: true})
-    //     .then(res => {
-    //         setHotelInfo(res.data)
-    //     })
-    // },[url])
+  // useEffect(()=> {
+  //     axios.get(url, {withCredentials: true})
+  //     .then(res => {
+  //         setHotelInfo(res.data)
+  //     })
+  // },[url])
 
-    return (
-        <div>
-            <Banner></Banner>
-            <FeaturedRooms data={data}></FeaturedRooms>
-            <OfferSection></OfferSection>
-            <Map></Map>
-            <NewsLetter></NewsLetter>
-        </div>
-    );
+  return (
+    <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home - Hotel Booking System</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <Banner></Banner>
+      <FeaturedRooms data={data}></FeaturedRooms>
+      <OfferSection></OfferSection>
+      <Map></Map>
+      <NewsLetter></NewsLetter>
+    </div>
+  );
 };
 
 export default Home;

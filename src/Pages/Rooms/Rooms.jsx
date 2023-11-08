@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import AllRoomsData from "./AllRoomsData";
+import { Helmet } from "react-helmet";
 
 const Rooms = () => {
   const [allRooms, setAllRooms] = useState([]);
@@ -22,16 +23,24 @@ const Rooms = () => {
         roomData.roomPrice >= minPrice && roomData.roomPrice <= maxPrice
     );
   };
-
   const filteredRooms = filterRoomsByPrice();
 
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Room - Hotel Booking System</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <div className="text-center mt-[40px]">
         {" "}
-        <h2 className="text-2xl font-bold mb-[20px]">You Can Filter Room By Price</h2>
+        <h2 className="text-2xl font-bold mb-[20px]">
+          You Can Filter Room By Price
+        </h2>
         <div>
-          <label htmlFor="minPrice" className="font-bold text-[#c97d4a]">Minimum Price : </label>
+          <label htmlFor="minPrice" className="font-bold text-[#c97d4a]">
+            Minimum Price :{" "}
+          </label>
           <input
             className="border border-[#c97d4a] mb-4"
             type="number"
@@ -41,7 +50,9 @@ const Rooms = () => {
           />
         </div>
         <div>
-          <label htmlFor="maxPrice" className="font-bold text-[#c97d4a]">Maximum Price : </label>
+          <label htmlFor="maxPrice" className="font-bold text-[#c97d4a]">
+            Maximum Price :{" "}
+          </label>
           <input
             className="border border-[#c97d4a]"
             type="number"
