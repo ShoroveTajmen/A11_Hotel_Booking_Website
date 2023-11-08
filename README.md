@@ -1,5 +1,5 @@
 - Website Name --> Hotel Booking System.
-- Live Site Link --> [Hotel Booking System](http://melted-stitch.surge.sh/)
+- Live Site Link --> [Hotel Booking System](http://wealthy-minute.surge.sh/)
 
 - In below I will list out the 5 Project features ::-
 

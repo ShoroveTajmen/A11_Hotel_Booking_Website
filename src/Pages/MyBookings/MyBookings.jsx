@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import MyBookingList from "./MyBookingList";
+import axios from "axios";
 
 const MyBookings = () => {
   const { user } = useContext(AuthContext);
@@ -14,11 +15,12 @@ const MyBookings = () => {
 //booking data load using useEffect
 const [bookigData, setBookingData] = useState([]);
 const url = `https://hotel-booking-server-steel.vercel.app/roomBooks?email=${user?.email}`;
-useEffect(()=>{
-  fetch(url, {credentials: 'include'})
-  .then(res => res.json())
-  .then(data => setBookingData(data))
-},[url])
+useEffect(() => {
+  axios.get(url, {withCredentials: true})
+  .then(res => {
+    setBookingData(res.data);
+  })
+}, [url]);
 console.log(bookigData);
 
 
@@ -30,7 +32,6 @@ console.log(bookigData);
     );
     setFindUserRoom(getRooms);
   }, [bookigData, userEmail]);
-//   console.log(findUserRoom);
 console.log(findUserRoom)
 
   return (
