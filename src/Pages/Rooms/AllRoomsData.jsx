@@ -21,7 +21,7 @@ const AllRoomsData = ({ roomData }) => {
 
   return (
     <div>
-      <div className="h-[400px] w-[350px] border border-[#c97d4a] mx-auto">
+      <div className="h-[500px] w-[350px] border border-[#c97d4a] mx-auto">
         <div className="">
           <Link to={`/roomDetails/${_id}`}>
             <img className="h-[300px] w-[]" src={roomPic} alt="" />
@@ -31,6 +31,7 @@ const AllRoomsData = ({ roomData }) => {
           {" "}
           <h2 className="font-bold text-[#c97d4a] text-xl">{roomPrice} TK PerNight</h2>
           <h2 className="text-sm text-gray-600">{roomDescription}</h2>
+          <Link to={`/roomDetails/${_id}`}><button className="btn text-white bg-[#c97d4a] mt-12">Book Now</button></Link>
         </div>
       </div>
     </div>

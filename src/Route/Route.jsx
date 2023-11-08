@@ -8,6 +8,7 @@ import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import RoomDetails from "../Pages/Rooms/RoomDetails";
 import UpdateBookingDate from "../Pages/MyBookings/UpdateBookingDate";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const myCreateRoute = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const myCreateRoute = createBrowserRouter([
       },
       {
         path: "/myBookins",
-        element: <MyBookings></MyBookings>,
+        element: <PrivateRoute><MyBookings></MyBookings></PrivateRoute>,
         loader: () => fetch("http://localhost:5001/roomBooks"),
       },
       {
@@ -36,7 +37,7 @@ const myCreateRoute = createBrowserRouter([
       },
       {
         path: '/roomDetails/:_id', //_id spelling same as link _id
-        element: <RoomDetails></RoomDetails>,
+        element: <PrivateRoute><RoomDetails></RoomDetails></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5001/roomData/${params._id}`),
       },
       {
