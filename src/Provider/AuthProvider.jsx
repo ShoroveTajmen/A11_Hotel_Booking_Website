@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../FirebaseConfig/firebase.config";
+import axios from "axios";
 
 //making context
 export const AuthContext = createContext(null);
@@ -51,11 +52,45 @@ const AuthProvider = ({ children }) => {
 
   //onAuth State changed or observer
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      setUser(user);
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      const userEmail = currentUser?.email || user?.email;
+      const loggedUser = { email: userEmail };
+      setUser(currentUser);
+      console.log("current user", currentUser);
       setLoading(false);
+      //if user exists then issue a token
+      if (currentUser) {
+        axios
+          .post(
+            "http://localhost:5001/jwt",
+            loggedUser,
+            {
+              withCredentials: true,
+            }
+          )
+          .then((res) => {
+            console.log("token response", res.data);
+          });
+      } else {
+        axios
+          .post(
+            "http://localhost:5001/logout",
+            loggedUser,
+            {
+              withCredentials: true,
+            }
+          )
+          .then((res) => {
+            console.log(res.data);
+          });
+      }
     });
-  }, []);
+    return () => {
+      return unsubscribe();
+    };
+  }, [user?.email]);
+
+
 
   const authentication = {
     googleLogin,

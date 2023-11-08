@@ -27,27 +27,37 @@ const myCreateRoute = createBrowserRouter([
       },
       {
         path: "/myBookins",
-        element: <PrivateRoute><MyBookings></MyBookings></PrivateRoute>,
-        loader: () => fetch("http://localhost:5001/roomBooks"),
+        element: (
+          <PrivateRoute>
+            <MyBookings></MyBookings>
+          </PrivateRoute>
+        ),
+        // loader: () => fetch("http://localhost:5001/roomBooks"),
       },
       {
-        path: '/updateDate/:_id',
+        path: "/updateDate/:_id",
         element: <UpdateBookingDate></UpdateBookingDate>,
-        loader: ({params}) => fetch(`http://localhost:5001/roomBooks/${params._id}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5001/roomBooks/${params._id}`),
       },
       {
-        path: '/roomDetails/:_id', //_id spelling same as link _id
-        element: <PrivateRoute><RoomDetails></RoomDetails></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5001/roomData/${params._id}`),
+        path: "/roomDetails/:_id", //_id spelling same as link _id
+        element: (
+          <PrivateRoute>
+            <RoomDetails></RoomDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5001/roomData/${params._id}`),
       },
       {
         path: "/register",
         element: <Register></Register>,
       },
       {
-        path: '/login',
-        element: <Login></Login>
-      }
+        path: "/login",
+        element: <Login></Login>,
+      },
     ],
   },
 ]);

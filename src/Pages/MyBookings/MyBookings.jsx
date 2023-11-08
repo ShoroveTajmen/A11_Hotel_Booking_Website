@@ -8,17 +8,31 @@ const MyBookings = () => {
   const userEmail = user.email;
   console.log(userEmail);
 
-  const loadedRoomBookingsData = useLoaderData();
+  // const loadedRoomBookingsData = useLoaderData();
 //   console.log(loadedRoomBookingsData);
 
-  const [findUserRoom, setFindUserRoom] = useState(loadedRoomBookingsData);
+
+//booking data load using useEffect
+const [bookigData, setBookingData] = useState([]);
+const url = `http://localhost:5001/roomBooks?email=${user?.email}`;
+useEffect(()=>{
+  fetch(url, {credentials: 'include'})
+  .then(res => res.json())
+  .then(data => setBookingData(data))
+},[])
+console.log(bookigData);
+
+
+
+  const [findUserRoom, setFindUserRoom] = useState(bookigData);
   useEffect(() => {
-    const getRooms = loadedRoomBookingsData.filter(
+    const getRooms = bookigData.filter(
       (room) => room.userEmail === userEmail
     );
     setFindUserRoom(getRooms);
-  }, [loadedRoomBookingsData, userEmail]);
+  }, [bookigData, userEmail]);
 //   console.log(findUserRoom);
+console.log(findUserRoom)
 
   return (
     <div>
