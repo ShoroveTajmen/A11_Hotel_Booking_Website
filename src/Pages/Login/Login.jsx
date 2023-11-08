@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -11,6 +11,7 @@ const Login = () => {
   const [regError, setRegError] = useState("");
   // eslint-disable-next-line no-unused-vars
   const [success, setSuccess] = useState("");
+  const location = useLocation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,6 +45,9 @@ const Login = () => {
         axios.post('http://localhost:5001/jwt', user, {withCredentials: true})
         .then(res => {
           console.log(res.data)
+          if(res.data.success){
+            navigate(location?.state ? location?.state : '/')
+          }
         })
         setSuccess(Swal.fire("Login Successful", "success"));
         navigate("/");
