@@ -4,7 +4,7 @@
     "roomDescription": "Deluxe Suite with Ocean View",
     "roomSize": "500 sq. ft",
     "specialOffers": "10% off for a week-long stay!",
-    "availability": 3,
+    "availability": 4,
     "roomPrice": 8000,
     "relatedRoomPic1": "https://i.ibb.co/30DZ3WD/1st-related.jpg",
     "relatedRoomPic2": "https://i.ibb.co/VDHCcsQ/1strelated2.jpg",
@@ -15,16 +15,16 @@
     "roomDescription": "Luxury Villa with Private Pool",
     "roomSize": "1200 sq. ft",
     "specialOffers": "15% off on your first booking!",
-    "availability": 2,
+    "availability": 5,
     "roomPrice": 15000,
     "relatedRoomPic1": "https://i.ibb.co/6vnHCYG/2ndrelated1.jpg",
     "relatedRoomPic2": "https://i.ibb.co/LxxDQKj/2nd-related2.jpg",
-    "relatedRoomPic3": "https://i.ibb.co/6vnHCYG/2ndrelated1.jpg"
+    "relatedRoomPic3": "https://i.ibb.co/ZMjLPS4/2nd-related3.jpg"
   },
   {
     "roomPic": "https://i.ibb.co/M24LJMK/3rd.png",
     "roomDescription": "Standard Room with City View",
-    "roomSize": "300 sq. ft",
+    "roomSize": "200 sq. ft",
     "specialOffers": "Free breakfast included!",
     "availability": 4,
     "roomPrice": 5000,
@@ -33,37 +33,37 @@
     "relatedRoomPic3": "https://i.ibb.co/16YwrFz/3rd3.jpg"
   },
   {
-    "roomPic": "https://i.ibb.co/M24LJMK/3rd.png",
-    "roomDescription": "Standard Room with City View",
-    "roomSize": "300 sq. ft",
-    "specialOffers": "Free breakfast included!",
-    "availability": 2,
-    "roomPrice": 5000,
-    "relatedRoomPic1": "https://i.ibb.co/r2KGm8B/3rd1.jpg",
-    "relatedRoomPic2": "https://i.ibb.co/LNQLgMd/3rd2.jpg",
-    "relatedRoomPic3": "https://i.ibb.co/16YwrFz/3rd3.jpg"
-  },
-  {
-    "roomPic": "https://i.ibb.co/M24LJMK/3rd.png",
-    "roomDescription": "Standard Room with City View",
-    "roomSize": "300 sq. ft",
-    "specialOffers": "Free breakfast included!",
+    "roomPic": "https://i.ibb.co/YQZJ8w8/room4.jpg",
+    "roomDescription": "Luxurious Master Suite with Oceanfront Balcony",
+    "roomSize": "500 sq. ft",
+    "specialOffers": "Complimentary champagne on arrival!",
     "availability": 5,
     "roomPrice": 5000,
-    "relatedRoomPic1": "https://i.ibb.co/r2KGm8B/3rd1.jpg",
-    "relatedRoomPic2": "https://i.ibb.co/LNQLgMd/3rd2.jpg",
-    "relatedRoomPic3": "https://i.ibb.co/16YwrFz/3rd3.jpg"
+    "relatedRoomPic1": "https://i.ibb.co/WsSdtgn/41.webp",
+    "relatedRoomPic2": "https://i.ibb.co/PFRrJ6k/42.jpg",
+    "relatedRoomPic3": "https://i.ibb.co/BgYJ98d/43.jpg"
   },
   {
-    "roomPic": "https://i.ibb.co/M24LJMK/3rd.png",
-    "roomDescription": "Standard Room with City View",
-    "roomSize": "300 sq. ft",
-    "specialOffers": "Free breakfast included!",
-    "availability": 3,
+    "roomPic": "https://i.ibb.co/5LyYJhr/5.jpg",
+    "roomDescription": "Rustic Cabin in the Woods with Fireplace",
+    "roomSize": "200 sq. ft",
+    "specialOffers": "Kids stay for free!",
+    "availability": 7,
     "roomPrice": 5000,
-    "relatedRoomPic1": "https://i.ibb.co/r2KGm8B/3rd1.jpg",
-    "relatedRoomPic2": "https://i.ibb.co/LNQLgMd/3rd2.jpg",
-    "relatedRoomPic3": "https://i.ibb.co/16YwrFz/3rd3.jpg"
+    "relatedRoomPic1": "https://i.ibb.co/NymmPMs/51.webp",
+    "relatedRoomPic2": "https://i.ibb.co/3pt90Lf/52.jpg",
+    "relatedRoomPic3": "https://i.ibb.co/6H4Khr1/53.jpg"
+  },
+  {
+    "roomPic": "https://i.ibb.co/p3r19LZ/6.jpg",
+    "roomDescription": "Modern Studio Apartment in the Heart of the City",
+    "roomSize": "400 sq. ft",
+    "specialOffers": "Guided historical tours available!",
+    "availability": 0,
+    "roomPrice": 5000,
+    "relatedRoomPic1": "https://i.ibb.co/MC2Z2ft/61.jpg",
+    "relatedRoomPic2": "https://i.ibb.co/p3r19LZ/6.jpg",
+    "relatedRoomPic3": "https://i.ibb.co/Ry58c81/63.jpg"
   }
 
 ]

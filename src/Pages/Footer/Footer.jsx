@@ -53,9 +53,7 @@ const Footer = () => {
               STAY WITH US
             </h1>
             <p className="">
-              Fashion and apparel encompass the art of self-expression through
-              clothing, enabling individuals to convey their unique style and
-              personality to the world.
+            Book your dream getaway online with ease. Explore a wide range of accommodations and secure your perfect stay in just a few clicks.
             </p>
             <div className="flex gap-3 mt-5">
               {" "}
