@@ -8,6 +8,8 @@ import Map from "./Map";
 import OfferSection from "./OfferSection";
 import NewsLetter from "./NewsLetter";
 import { Helmet } from "react-helmet";
+import PrivacyPolicy from "./PrivacyPolicy";
+import AboutUs from "./AboutUs";
 
 const Home = () => {
   const data = useLoaderData();
@@ -32,6 +34,8 @@ const Home = () => {
       <FeaturedRooms data={data}></FeaturedRooms>
       <OfferSection></OfferSection>
       <Map></Map>
+      <AboutUs></AboutUs>
+      <PrivacyPolicy></PrivacyPolicy>
       <NewsLetter></NewsLetter>
     </div>
   );
