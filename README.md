@@ -1,5 +1,6 @@
 - Website Name --> Hotel Booking System.
 - Live Site Link --> [Hotel Booking System](http://wealthy-minute.surge.sh)
+- Server Side Repo Link --> (https://github.com/ShoroveTajmen/A11_Hotel_Booking_Website_ServerSide)
 
 - In below I will list out the 5 Project features ::-
 
@@ -21,5 +22,7 @@ The fields for name, photo, email, and password on the registration page. At lea
 
   - JWT related Overview -> 
 Json web token verification is added in this project. When a user log in to the website json web token will be stored in the cookie. Json web token also created when user log in via google. JWT verfication added in private route, unauthorized user can not access any data.
+
+-Technologies Used -> JavaScript, React.js, Node.js, Express.js, MongoDB, Firebase
 
 
